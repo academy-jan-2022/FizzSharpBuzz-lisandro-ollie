@@ -1,4 +1,4 @@
 ﻿module FizzBuzz
 
 let convert number =
-  "1"
+  number.ToString()
