@@ -2,17 +2,18 @@
 
 
 
-let (|IS_FIZZ_BUZZ|IS_FIZZ|IS_BUZZ|IS_NUM|) number =
-    if number % 15 = 0 then IS_FIZZ_BUZZ
-    elif number % 3 = 0 then IS_FIZZ
-    elif number % 5 = 0 then IS_BUZZ
-    else IS_NUM
+let (|MULTIPLE_OF_THREE_AND_FIVE|MULTIPLE_OF_THREE|MULTIPLE_OF_FIVE|IS_NUM|) number =
+    match number % 5, number % 3 with
+    | 0, 0 -> MULTIPLE_OF_THREE_AND_FIVE
+    | 0, _ -> MULTIPLE_OF_FIVE
+    | _, 0-> MULTIPLE_OF_THREE
+    | _ -> IS_NUM
     
     
 let convert number =
   match number with
-  | IS_FIZZ_BUZZ -> "FizzBuzz"
-  | IS_FIZZ -> "Fizz"
-  | IS_BUZZ -> "Buzz"
+  | MULTIPLE_OF_THREE_AND_FIVE -> "FizzBuzz"
+  | MULTIPLE_OF_THREE -> "Fizz"
+  | MULTIPLE_OF_FIVE -> "Buzz"
   | IS_NUM -> number.ToString()
 
