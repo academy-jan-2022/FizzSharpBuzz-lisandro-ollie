@@ -1,10 +1,17 @@
 ﻿module FizzBuzz
 
 open Microsoft.FSharp.Core
+let y (x:string) = match x with | x when x.Contains("hi") -> "HELLO" | x when x.Contains("hello") -> "HI" | x -> x
+
 
 let (|IS_MULTIPLE_OF|_|) multiplier number =
     match number % multiplier with
     | 0 -> Some ()
+    | _ -> None
+
+let (|CONTAINS|_|) container number =
+    match string number with
+    | x when x.Contains(string container) -> Some ()
     | _ -> None
 
 let convert number =
@@ -12,6 +19,7 @@ let convert number =
   | IS_MULTIPLE_OF 15 -> "FizzBuzz"
   | IS_MULTIPLE_OF 3 -> "Fizz"
   | IS_MULTIPLE_OF 5 -> "Buzz"
+  | CONTAINS 3 -> "Fizz"
   | number -> string number
 
 

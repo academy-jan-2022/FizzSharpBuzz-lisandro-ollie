@@ -33,7 +33,6 @@ let ``convert to FizzBuzz when multiple of 3 and 5`` (input, expected) =
 
 [<Theory>]
 [<InlineData(32, "Fizz")>]
-
 let ``convert to Fizz when contains 3`` (input, expected) =
   let result = FizzBuzz.convert input
   Assert.Equal(expected, result)
