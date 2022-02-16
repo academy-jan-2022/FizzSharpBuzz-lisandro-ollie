@@ -17,10 +17,11 @@ let (|CONTAINS|_|) container number =
 let convert number =
   match number with
   | IS_MULTIPLE_OF 15 -> "FizzBuzz"
+  | CONTAINS 3 & CONTAINS 5 -> "FizzBuzz"
   | IS_MULTIPLE_OF 3 -> "Fizz"
-  | IS_MULTIPLE_OF 5 -> "Buzz"
   | CONTAINS 3 -> "Fizz"
   | CONTAINS 5 -> "Buzz"
+  | IS_MULTIPLE_OF 5 -> "Buzz"
   | number -> string number
 
 
