@@ -2,7 +2,9 @@ module Tests
 
 open Xunit
 
-[<Fact>]
-let ``convert number 1 to string`` () =
-  let result = FizzBuzz.convert 1
-  Assert.Equal("1", result)
+[<Theory>]
+[<InlineData(1, "1")>]
+[<InlineData(2, "2")>]
+let ``convert given number to string`` (input, expected) =
+  let result = FizzBuzz.convert input
+  Assert.Equal(expected, result)
