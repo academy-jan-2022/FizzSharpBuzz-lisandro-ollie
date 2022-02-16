@@ -19,6 +19,7 @@ let ``convert multiple of 3 to Fizz`` (input, expected) =
   
 [<Theory>]
 [<InlineData(5, "Buzz")>]
+[<InlineData(10, "Buzz")>]
 let ``convert multiple of 5 to Buzz`` (input, expected) =
   let result = FizzBuzz.convert input
   Assert.Equal(expected, result)
