@@ -40,6 +40,13 @@ let ``convert to Fizz when contains 3`` (input, expected) =
   
 [<Theory>]
 [<InlineData(58, "Buzz")>]
+[<InlineData(65, "Buzz")>]
 let ``convert to Buzz when contains 5`` (input, expected) =
+  let result = FizzBuzz.convert input
+  Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData(35, "FizzBuzz")>]
+let ``convert to FizzBuzz when contains 3 and 5`` (input, expected) =
   let result = FizzBuzz.convert input
   Assert.Equal(expected, result)

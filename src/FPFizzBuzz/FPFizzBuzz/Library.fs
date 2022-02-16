@@ -20,6 +20,7 @@ let convert number =
   | IS_MULTIPLE_OF 3 -> "Fizz"
   | IS_MULTIPLE_OF 5 -> "Buzz"
   | CONTAINS 3 -> "Fizz"
+  | CONTAINS 5 -> "Buzz"
   | number -> string number
 
 
